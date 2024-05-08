@@ -4,26 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/login.css">
-    <link rel="stylesheet" href="style/responsive/responsive-index.css">
+  
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-    <title>Totalplay Gaming</title>
+    <title>BigTrivia</title>
 </head>
 <body>
 
 
     <div class="container">
-        <div class="totalplay-phase-register">
+        <div class="contenedor-imagen" style="display:none">
+        <img src="img/copa.png" >
 
-            <div class="nav-logo">
-                <img src="img/logos/totalplay-logo.png" alt="">
-            </div>
-
-            <div class="phase-totalplay">   
-                <img class="banner-personajes" src="img/recursos/banner-personajes.png" alt="">
-            </div>
         </div>
-
         <div class="container-register">
 
             <!-- =======Formulario de Inicio de Sesión======= -->
@@ -58,7 +51,7 @@
                     <input type="text" name="celular" placeholder="Celular" required>
                     <input type="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
                     <input type="text" name="numero_cliente_totalplay" placeholder="Número de Cliente Totalplay" required>
-                    <input type="submit" value="Registrarse">
+                    <input class="boton-registrarse" type="submit" value="Registrarse">
                 </form>
             </div>
 
@@ -66,8 +59,13 @@
             <p id="toggle-text">¿No tienes una cuenta? <a id="toggle-link" href="#" onclick="toggleForm()">Regístrate aquí</a>.</p>
 
         </div>
+
+
+        <div class="espacio-register">
            
         </div>
+           
+    </div>
 
     </div>
 

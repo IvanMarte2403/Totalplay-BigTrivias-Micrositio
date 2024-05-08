@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Totalplay Gaming</title>
+    <title>Big Trivia</title>
 </head>
 <body>
     <form id="registro" method="post" action="forms.php">

@@ -21,8 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['nombre_apellidos'] = $user['nombre_apellidos'];
         $_SESSION['id'] = $user['id'];
 
-        // Redirigir al usuario a dashboard.php
-        header('Location: dashboard.php');
+        header('Location: juego-1/index.html');
         exit;
     } else {
         // Error de inicio de sesión
