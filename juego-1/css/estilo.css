@@ -39,14 +39,13 @@ html, body {
 body {
     background-color: #000;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     color: #fff;
 }
 
 .container{
-    width: 90%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,6 +54,8 @@ body {
     padding: 2rem;
     border-radius: 10px;
     background-image: url('../image/portadas/champions-border.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .vara {
     height: 40px;

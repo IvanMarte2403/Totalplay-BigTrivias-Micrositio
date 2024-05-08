@@ -173,6 +173,9 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 10vh !important;
+        margin-bottom: 10vh !important;
+
     }
 
     .contenedor-imagen img{

@@ -1,0 +1,23 @@
+:root{
+    --background-color-1: #060e63;
+    --color-1: #593cbc;
+    --color-primary: #fff;
+    --font-1: 'Press Start 2P';
+    --font-2: 'Jersey 15';
+    --font-3: 'Anton';
+    --font-4: 'Roboto Condensed';
+    --historia-color: #ff6961;
+    --deportes-color: #77dd77;
+    --arte-color: #fdfd96;
+    --ciencia-color: #84b6f4;
+    --geografia-color: #fdcae1;
+     --font-secondary: 'Rubik';
+    --font-third: 'Roboto';
+    --font-fourth: 'Champions Bold';
+}
+
+.usuario-dashboard{
+    width: 25%;
+    background-color: var(--color-primary);
+    border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;
+}

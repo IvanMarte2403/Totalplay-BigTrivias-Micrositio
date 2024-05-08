@@ -14,7 +14,7 @@
 
     <div class="container">
         <div class="contenedor-imagen" style="display:none">
-        <img src="img/copa.png" >
+        <img src="img/copa-2.png" >
 
         </div>
         <div class="container-register">
