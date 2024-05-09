@@ -139,13 +139,35 @@ if (preguntaActual >= preguntasSeleccionadas.length) {
     event.preventDefault();
 
     // Imprime "Guardar & Salir" en la consola
-    window.parent.postMessage(puntuacion, '*');
+    window.puntuacionGlobal = puntuacion; // Guarda la puntuación global
+   
+  // Enviar la puntuación global a guardar-puntaje.php
+  fetch('../guardar-puntaje.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: 'puntaje=' + encodeURIComponent(window.puntuacionGlobal),
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      console.log('Puntuación guardada con éxito');
+    } else {
+      console.log('Error al guardar la puntuación: ' + data.error);
+    }
+  });
+
+
     puntuacion = 0; // Reinicia la puntuación
     puntajeTotal.textContent = 'Puntuación total: ' + puntuacion; // Actualiza la puntuación total
 
     // Muestra un mensaje de éxito
     enlace.textContent = 'Puntuación guardada';
     enlace.style.color = 'green';
+
+ 
+
   });
 
   return;

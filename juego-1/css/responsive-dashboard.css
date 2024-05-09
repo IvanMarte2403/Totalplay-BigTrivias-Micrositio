@@ -1,0 +1,19 @@
+@media only screen and (max-width: 690px){
+
+    body{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .usuario-dashboard{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 2vh;
+    }
+
+    .container{
+        width: 80% !important;
+    }
+}

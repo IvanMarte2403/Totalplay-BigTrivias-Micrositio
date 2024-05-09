@@ -164,13 +164,19 @@ body {
 
 .correcto_respuesta{
     color: #fff;
-    background-color: var(--deportes-color);
+    background-image: linear-gradient(144deg, #4CAF50, #388E3C 50%, #1B5E20) !important;
+
+box-shadow: rgba(0, 128, 0, 0.2) 0 15px 30px -5px !important;
+
+
 }
 
 
 .incorrecto_respuesta{
     color: #fff;
-    background-color: #ff6961;
+    background-image: linear-gradient(144deg, #FF5733, #FF2D00 50%, #D62000) !important;
+    box-shadow: rgba(255, 0, 0, 0.2) 0 15px 30px -5px !important;
+
 }
 
 
@@ -195,7 +201,7 @@ body {
     font-family: var(--font-fourth);
     background-color: #fff;
     color: #000;
-    border-radius: 2rem;
+    border-radius: 2rem;    
     }
 
 /* #contenedor-respuestas p{

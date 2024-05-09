@@ -12,7 +12,7 @@ include 'db_conexion.php';
 $sql = "INSERT INTO usuarios (nombre_apellidos, email, contrasena, genero, celular, fecha_nacimiento, numero_cliente_totalplay) VALUES ('$nombre_apellidos', '$email', '$contrasena', '$genero', '$celular', '$fecha_nacimiento', '$numero_cliente_totalplay')";
 
 if ($conexion->query($sql) === TRUE) {
-    header('Location: juego-1/index.html'); // Redirige a juego-1/index.html
+    header('Location: juego-1/dashboard.php'); // Redirige a juego-1/index.html
     exit;
 } else {
     echo "Error: " . $sql . "<br>" . $conexion->error;

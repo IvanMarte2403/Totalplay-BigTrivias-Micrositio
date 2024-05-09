@@ -9,25 +9,25 @@ include 'db_conexion.php';
 $puntaje = $_POST['puntaje'];
 $id_usuario = $_SESSION['id'];
 
-// Prepara la consulta SQL para insertar el puntaje en la base de datos
-$sql = "INSERT INTO juego_1 (id, puntaje, fecha_hora) VALUES (?, ?, NOW())";
+// Prepara la consulta SQL para actualizar el puntaje en la base de datos
+$sql = "UPDATE usuarios SET puntaje = puntaje + ? WHERE id = ?";
 
 // Prepara la declaración
 $stmt = $conexion->prepare($sql);
 
 // Vincula los parámetros
-$stmt->bind_param("ii", $id_usuario, $puntaje);
+$stmt->bind_param("ii", $puntaje, $id_usuario);
 
 // Ejecuta la declaración
 $stmt->execute();
 
-// Verifica si se insertó el puntaje
+// Verifica si se actualizó el puntaje
 if ($stmt->affected_rows > 0) {
     // Devuelve el puntaje
-    echo $puntaje;
+    echo json_encode(['success' => true, 'puntaje' => $puntaje]);
 } else {
     // Devuelve un error
-    echo 'Error al guardar el puntaje: ' . $conexion->error;
+    echo json_encode(['success' => false, 'error' => 'Error al guardar el puntaje: ' . $conexion->error]);
 }
 
 // Cierra la declaración y la conexión
