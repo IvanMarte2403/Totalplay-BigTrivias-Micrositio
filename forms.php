@@ -12,7 +12,14 @@ include 'db_conexion.php';
 $sql = "INSERT INTO usuarios (nombre_apellidos, email, contrasena, genero, celular, fecha_nacimiento, numero_cliente_totalplay) VALUES ('$nombre_apellidos', '$email', '$contrasena', '$genero', '$celular', '$fecha_nacimiento', '$numero_cliente_totalplay')";
 
 if ($conexion->query($sql) === TRUE) {
-    header('Location: juego-1/dashboard.php'); // Redirige a juego-1/index.html
+    // Inicia una nueva sesión
+    session_start();
+    // Establece las variables de sesión
+    $_SESSION['loggedin'] = true;
+    $_SESSION['nombre_apellidos'] = $nombre_apellidos;
+    $_SESSION['id'] = $conexion->insert_id; // Obtiene el ID del último registro insertado
+    // Redirige al usuario a dashboard.php
+    header('Location: juego-1/dashboard.php');
     exit;
 } else {
     echo "Error: " . $sql . "<br>" . $conexion->error;

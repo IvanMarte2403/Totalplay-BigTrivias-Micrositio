@@ -15,7 +15,7 @@ function girar(){
     // ocument.querySelectdor('.contador').innerHTML = 'TURNOS: ' + giros; 
   }else{
     Swal.fire({
-      icon: 'success',
+      icon: 'success', 
       title: 'VUELVA PRONTO EL JUEGO TERMINO!!',
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Aceptar',

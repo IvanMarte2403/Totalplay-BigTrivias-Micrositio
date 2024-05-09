@@ -1,7 +1,7 @@
 <?php
 session_start(); // Inicia una nueva sesión o reanuda la existente
 if(!isset($_SESSION['loggedin'])) { // Si no hay ninguna sesión activa
-  header("Location: ../login.php"); // Redirige al usuario a la página de inicio de sesión
+  header("Location: ../index.php"); // Redirige al usuario a la página de inicio de sesión
   exit; // Termina la ejecución del script
 }
 

@@ -1,7 +1,7 @@
 
 
 <?php
-$conexion = new mysqli('localhost', 'bigtriviatotalpl_admin', '{!)YY6E8dG?0', 'bigtriviatotalpl_bigtrivia');
+$conexion = new mysqli('localhost', 'bigtriviatotalpl_bigtrivia-new', 'M$rte24i', 'bigtriviatotalpl_bigtrivia');
 
 if ($conexion->connect_error) {
     die("Conexion fallida: " . $conexion->connect_error);
