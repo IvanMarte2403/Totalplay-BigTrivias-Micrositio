@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/login.css">
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
     <title>BigTrivia</title>
@@ -33,6 +33,12 @@
                         <label for="terminos">He leído los términos y condiciones</label>
                         <input type="checkbox" id="terminos" name="terminos" required>    
                     </div>
+                        <div class="redes-sociales">
+                            <a href="https://m.facebook.com/totalplay/?wtsid=rdr_0PdB1QVabuErDhxmW" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/totalplaymx/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@totalplaymx" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://twitter.com/totalplaymx" target="_blank"><i class="fas fa-times"></i></a>
+                        </div>
                     
                     <input class="boton-iniciar-sesion" type="submit" value="Iniciar sesión">
                 </form>

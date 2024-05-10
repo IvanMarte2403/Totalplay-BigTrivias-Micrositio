@@ -41,24 +41,24 @@ function girar(){
   
     // Agrega una clase dependiendo del premio
     switch(premios) {
-      case 'Historia':
+      case 'JUGADORES':
         elemento.classList.add('historia-text');
         mostrarPreguntas('historia');
         break;
-      case 'Geografía':
+      case 'ESTADIOS':
         elemento.classList.add('geografia-text');
         mostrarPreguntas('geografia');
         break;
-     case 'Ciencia':
+     case 'PARTIDOS':
         elemento.classList.add('ciencia-text');
         mostrarPreguntas('ciencia');
 
       break
-     case 'Deportes':
+     case 'PERSONAJES':
         elemento.classList.add('deporte-text');
         mostrarPreguntas('deporte');
       break
-     case 'Arte':
+     case 'DEPORTES':
         elemento.classList.add('arte-text');
         mostrarPreguntas('arte');
       break
@@ -81,19 +81,19 @@ function girar(){
   setTimeout(() => {
   switch (true) {
     case valor > 0 && valor <= 72:
-     premio("Historia");
+     premio("JUGADORES");
      break;
      case valor > 72 && valor <= 144:
-     premio("Geografía");
+     premio("ESTADIOS");
      break;
      case valor > 144 && valor <= 216:
-     premio("Ciencia"); 
+     premio("PARTIDOS"); 
      break; 
      case valor > 216 && valor <= 288:
-     premio("Arte");
+     premio("PERSONAJES");
      break;
      case valor > 278 && valor <= 360:
-     premio("Deportes");
+     premio("DEPORTES");
      break; 
      
   }
@@ -115,6 +115,7 @@ function mostrarPreguntas(categoria) {
   let preguntaActual = 0;
   let temporizador;
 
+  contenedorPreguntas.style.display = 'block'; // Muestra el contenedor de preguntas  
   function mostrarPregunta() {
     // Detiene el temporizador anterior si existe
     if (temporizador) {

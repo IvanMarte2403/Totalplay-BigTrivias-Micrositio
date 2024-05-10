@@ -57,6 +57,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+ /* Se coloco display none porque para totalplay se veia raro */
 .vara {
     height: 40px;
     width: 15px;
@@ -68,6 +70,7 @@ body {
     border: 1px solid var(--color-primary);
     border-top: 5px solid var(--color-primary);
     z-index: 1000;
+    display: none;
 }
 
 
@@ -82,7 +85,7 @@ body {
     z-index: 100;
     transition: all 5s;
     object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
-    width: 30%;
+    width: 40%;
     }
 
 #premio {
@@ -94,6 +97,7 @@ body {
     padding: 20px;
    
 }
+
 
 
 /* =========Estilos Por Categorias========= */

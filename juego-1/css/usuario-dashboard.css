@@ -25,8 +25,8 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
+
 
 .logo-bigTrivia{
     width: 100%;
@@ -75,19 +75,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--color-primary);
+    background-color: var(--background-color-1);
     width: 80%;
     margin-top: 4vh;
     border-radius: 2rem;
-    color: #000;
+    color: #fff;
     padding: 1rem;
+    align-items: center;
 }
 
+.dashboard-posicion-global img{
+    width: 20%;
+    margin-bottom: 1rem;
+}
 
 .dashboard-posicion-global h3{
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    border-bottom: #fff solid 0.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .posicion-jugador{
@@ -97,6 +105,10 @@
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    
 }
 
 
@@ -104,7 +116,18 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
+}
+
+.numero-posicion{
+    color: var(--arte-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.puntaje-numero{
+    color: var(--arte-color);
+    font-weight: 800;
 }

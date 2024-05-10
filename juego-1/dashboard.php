@@ -90,22 +90,21 @@ $conexion->close();
     </div>
 
     <div class="dashboard-posicion-global">
+      <img src="image/copa.png" alt="">
       <h3>Ranking Mundial</h3>
       <div class="posicion-jugador">
-        <p>Eres el jugador No. </p> 
         <p>Posición: <?php echo $posicion; ?>     </div>
-      
-
+    
         <?php
           // Imprime los jugadores
           foreach ($jugadores as $index => $jugador) {
             echo '<div class="perfil-ranking">';
-            echo '<p>#' . ($index + 1) . '</p>';
+            echo '<p class="numero-posicion">#' . ($index + 1) . '</p>';
             echo '<p id="usuario-ranking">' . $jugador['nombre_apellidos'] . '</p>';
-             echo '<p>Puntaje: ' . $jugador['puntaje'] . '</p>';
+             echo '<p class="puntaje-numero"> ' . $jugador['puntaje'] . '</p>';
             echo '</div>';
             }
-?>
+          ?>
 
 
 
@@ -128,7 +127,7 @@ $conexion->close();
       <p id="temporizador-pregunta" style="display: none;"></p>
     </div>
 
-    <div id="contenedor-preguntas">
+    <div id="contenedor-preguntas" style="display: none;">
 
     </div>
     <div id="contenedor-respuestas">
