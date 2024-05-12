@@ -25,3 +25,4 @@ let preguntas = {
         { pregunta: '¿Quién es el jugador con más tarjetas rojas en la Champions?', respuestas: ['Zlatan Ibrahimović', 'Sergio Ramos', 'Cristiano Ronaldo'], respuestaCorrecta: 1 }
     ]
 };
+    
