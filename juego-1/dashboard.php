@@ -1,8 +1,13 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start(); // Inicia una nueva sesión o reanuda la existente
 if(!isset($_SESSION['loggedin'])) { // Si no hay ninguna sesión activa
-  header("Location: ../index.php"); // Redirige al usuario a la página de inicio de sesión
-  exit; // Termina la ejecución del script
+    header("Location: ../index.php"); // Redirige al usuario a la página de inicio de sesión
+    exit; // Termina la ejecución del script
 }
 
 include '../db_conexion.php';
@@ -10,17 +15,25 @@ include '../db_conexion.php';
 $id = $_SESSION['id'];
 $puntaje = 0; // Inicializa la variable puntaje
 
-$sql = "SELECT puntaje FROM usuarios WHERE id = ?";
+$sql = "SELECT puntaje, estado_juego FROM usuarios WHERE id = ?";
 $stmt = $conexion->prepare($sql);
+
+if ($stmt === false) {
+    die("Error: " . $conexion->error);
+}
+
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$estado_juego = 0; // Inicializa la variable estado_juego
+
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $puntaje = $user['puntaje'];
+    $estado_juego = $user['estado_juego'];
 } else {
-    // Maneja el caso en que no se encontró al usuario
+    die("Error: User not found"); // Maneja el caso en que no se encontró al usuario
 }
 
 $stmt->close();
@@ -28,27 +41,34 @@ $stmt->close();
 // Obtén todos los puntajes ordenados de mayor a menor
 $resultado = $conexion->query("SELECT id, puntaje FROM usuarios ORDER BY puntaje DESC");
 
+if ($resultado === false) {
+    die("Error: " . $conexion->error);
+}
+
 // Convierte el resultado en un array asociativo
 $puntajes = $resultado->fetch_all(MYSQLI_ASSOC);
 
 // Encuentra la posición del usuario actual
 $posicion = 0;
 foreach ($puntajes as $index => $usuario) {
-  if ($usuario['id'] == $id) {
-    $posicion = $index + 1;
-    break;
-  }
+    if ($usuario['id'] == $id) {
+        $posicion = $index + 1;
+        break;
+    }
 }
 
 // Obtén los tres jugadores con el puntaje más alto
 $resultado = $conexion->query("SELECT nombre_apellidos, puntaje FROM usuarios ORDER BY puntaje DESC LIMIT 3");
+
+if ($resultado === false) {
+    die("Error: " . $conexion->error);
+}
 
 // Convierte el resultado en un array asociativo
 $jugadores = $resultado->fetch_all(MYSQLI_ASSOC);
 
 $conexion->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -154,6 +174,7 @@ $conexion->close();
   </div>
   
 <script>
+
 var idDelUsuario = <?php echo $_SESSION['id']; ?>;
 </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
