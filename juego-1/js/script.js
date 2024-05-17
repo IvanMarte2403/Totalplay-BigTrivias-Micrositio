@@ -18,7 +18,7 @@ fetch('../obtener-estado-juego.php', {
 
     // Mostrar mensaje en #contenedor-preguntas
     document.querySelector('.quizzSeleccionado').innerText = 'Ya has completado el reto';
-    document.querySelector('.vara').style.display = 'none';
+    document.querySelector('.vara').style.display = 'none';W
   
   }
 })
